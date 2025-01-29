@@ -26,15 +26,4 @@ resource "github_repository" "cloud-9-aviation_github_io" {
   vulnerability_alerts   = true
   auto_init              = true
   # homepage_url           = "https://cloud9.avia"
-
-  pages {
-    source {
-      branch = "gh-pages"
-      path   = "/"
-    }
-    # TODO Add AWS resource
-    # https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository#cname
-    # > This can only be set after the repository has been created.
-    # cname = "cloud9.avia"
-  }
 }
