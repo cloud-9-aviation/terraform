@@ -1,16 +1,5 @@
 # Infrastructure as a Code
 
-## TODO
-
-- [ ] Configure pre-commit hooks.
-- [ ] Configure mkdocs.
-- [ ] Configure CodeRabbitAI.
-- [ ] Configure `terraform plan` required check.
-- [ ] Extract `Dockerfile` to templates.
-- [ ] Test `postCreateCommand`.
-- [ ] Cleanup `.env`, `.auto.vars` & `README.md`
-- [ ] Check Terraform settings for Dependabot
-
 ## 1Password
 
 
@@ -37,4 +26,3 @@ terraform plan
 # op run --no-masking --env-file="./.env" -- terraform plan
 # terraform plan -var="github_token=$(op read "op://Cloud 9 Aviation LLC/GitHub Personal Access Token/token")"
 ```
-

@@ -3,9 +3,7 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
-	"postCreateCommand": {
-		"command": "sudo chown -Rc $USER:$GROUP /home/vscode/.terraform.d/"
-	},
+	"postCreateCommand": ".devcontainer/postCreateCommand.sh",
 	"mounts": [
 		"source=home-dot-terraform-d,target=/home/vscode/.terraform.d,type=volume",
 		"source=home-dot-cache,target=/home/vscode/.cache,type=volume",
@@ -19,12 +17,23 @@
 			"version": "1.1",
 			"tflint": "0.47.0",
 			"terragrunt": "latest"
+		},
+		"ghcr.io/devcontainers/features/python:1": {
+			"installTools": true,
+			"toolsToInstall": "pre-commit,shellcheck-py",
+			"optimize": true,
+			"version": "3.12"
 		}
 	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-azuretools.vscode-docker"
+				"ms-azuretools.vscode-docker",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"hashicorp.terraform",
+				"GitHub.vscode-pull-request-github",
+				"eamodio.gitlens"
 			]
 		}
 	}
