@@ -26,4 +26,11 @@ resource "github_repository" "cloud-9-aviation_github_io" {
   vulnerability_alerts   = true
   auto_init              = true
   # homepage_url           = "https://cloud9.avia"
+  pages {
+    build_type = "workflow"
+    source {
+      branch = "main"
+      path   = "/"
+    }
+  }
 }
