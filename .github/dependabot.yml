@@ -10,3 +10,8 @@ updates:
    directory: "/"
    schedule:
      interval: weekly
+ # https://github.com/dependabot/dependabot-core/issues/8725
+ - package-ecosystem: "terraform"
+   directory: "/"
+   schedule:
+     interval: "weekly"
