@@ -26,3 +26,7 @@ terraform plan
 # op run --no-masking --env-file="./.env" -- terraform plan
 # terraform plan -var="github_token=$(op read "op://Cloud 9 Aviation LLC/GitHub Personal Access Token/token")"
 ```
+
+```bash
+terraform import module.github.github_repository.terraform terraform
+```
