@@ -34,3 +34,30 @@ resource "github_repository" "cloud-9-aviation_github_io" {
     }
   }
 }
+
+resource "github_repository" "terraform" {
+  name        = "terraform"
+  description = "Infrastructure as Code"
+
+  allow_auto_merge       = true
+  delete_branch_on_merge = true
+  has_issues             = true
+  has_projects           = true
+  vulnerability_alerts   = true
+  auto_init              = true
+  has_downloads          = true
+}
+
+resource "github_branch_protection" "terraform" {
+  repository_id = github_repository.terraform.node_id
+  pattern       = "main"
+
+  required_status_checks {
+    strict   = true
+    contexts = [
+      "Terraform Cloud/cloud-9-aviation/repo-id-K3moCmuhmPFiwadA"
+    ]
+  }
+
+  enforce_admins = true
+}
