@@ -38,6 +38,7 @@ resource "github_repository" "cloud-9-aviation_github_io" {
 resource "github_repository" "terraform" {
   name        = "terraform"
   description = "Infrastructure as Code"
+  visibility  = "public"
 
   allow_auto_merge       = true
   delete_branch_on_merge = true
