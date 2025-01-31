@@ -76,3 +76,17 @@ resource "github_repository" "office" {
   auto_init              = true
   has_downloads          = false
 }
+
+resource "github_repository" "devcontainers-templates" {
+  name        = "devcontainers-templates"
+  description = "Custom Dec Container Templates"
+  visibility  = "public"
+
+  allow_auto_merge       = true
+  delete_branch_on_merge = true
+  has_issues             = true
+  has_projects           = true
+  vulnerability_alerts   = true
+  auto_init              = false
+  has_downloads          = true
+}
