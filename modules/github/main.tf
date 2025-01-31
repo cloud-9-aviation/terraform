@@ -89,4 +89,6 @@ resource "github_repository" "devcontainers-templates" {
   vulnerability_alerts   = true
   auto_init              = false
   has_downloads          = true
+  is_template            = false
+  has_wiki               = false
 }

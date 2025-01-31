@@ -32,4 +32,5 @@ terraform plan
 
 ```bash
 terraform import module.github.github_repository.terraform terraform
+terraform import module.github.github_repository.devcontainers-templates devcontainers-templates
 ```
