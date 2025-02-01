@@ -124,3 +124,24 @@ resource "github_repository" "pre-commit" {
   is_template            = false
   has_wiki               = false
 }
+
+resource "github_branch_protection" "pre-commit" {
+  repository_id = github_repository.pre-commit.node_id
+  pattern       = "main"
+
+  required_status_checks {
+    strict   = true
+    contexts = [
+      "Python CI / publish / publish (pull_request)",
+      "Python CI / validation / validation (bandit) (pull_request)",
+      "Python CI / validation / validation (black) (pull_request)",
+      "Python CI / validation / validation (flake8) (pull_request)",
+      "Python CI / validation / validation (pylint) (pull_request)",
+      "Python CI / validation / validation (pytest, -m integration) (pull_request)",
+      "Python CI / validation / validation (pytest, -m not integration and not gpu) (pull_request)",
+      "Semantic PR Check / Validate PR title (pull_request_target)",
+    ]
+  }
+
+  enforce_admins = true
+}
