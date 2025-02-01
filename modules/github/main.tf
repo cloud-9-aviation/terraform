@@ -132,14 +132,14 @@ resource "github_branch_protection" "pre-commit" {
   required_status_checks {
     strict   = true
     contexts = [
-      "Python CI / publish / publish (pull_request)",
-      "Python CI / validation / validation (bandit) (pull_request)",
-      "Python CI / validation / validation (black) (pull_request)",
-      "Python CI / validation / validation (flake8) (pull_request)",
-      "Python CI / validation / validation (pylint) (pull_request)",
-      "Python CI / validation / validation (pytest, -m integration) (pull_request)",
-      "Python CI / validation / validation (pytest, -m not integration and not gpu) (pull_request)",
-      "Semantic PR Check / Validate PR title (pull_request_target)",
+      "Python CI / publish / publish",
+      "Python CI / validation / validation (bandit)",
+      "Python CI / validation / validation (black)",
+      "Python CI / validation / validation (flake8)",
+      "Python CI / validation / validation (pylint)",
+      "Python CI / validation / validation (pytest, -m integration)",
+      "Python CI / validation / validation (pytest, -m not integration and not gpu)",
+      "Semantic PR Check / Validate PR title",
     ]
   }
 
