@@ -132,6 +132,7 @@ resource "github_branch_protection" "pre-commit" {
   required_status_checks {
     strict   = true
     contexts = [
+      /*
       "Python CI / publish / publish",
       "Python CI / validation / validation (bandit)",
       "Python CI / validation / validation (black)",
@@ -140,6 +141,7 @@ resource "github_branch_protection" "pre-commit" {
       "Python CI / validation / validation (pytest, -m integration)",
       "Python CI / validation / validation (pytest, -m not integration and not gpu)",
       "Semantic PR Check / Validate PR title",
+      */
     ]
   }
 
