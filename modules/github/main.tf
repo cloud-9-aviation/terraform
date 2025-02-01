@@ -108,3 +108,19 @@ resource "github_repository" "devcontainers-features" {
   is_template            = false
   has_wiki               = false
 }
+
+resource "github_repository" "pre-commit" {
+  name        = "pre-commit"
+  description = "Git Commit Hooks"
+  visibility  = "public"
+
+  allow_auto_merge       = true
+  delete_branch_on_merge = true
+  has_issues             = true
+  has_projects           = true
+  vulnerability_alerts   = true
+  auto_init              = true
+  has_downloads          = true
+  is_template            = false
+  has_wiki               = false
+}
