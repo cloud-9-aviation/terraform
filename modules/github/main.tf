@@ -111,7 +111,7 @@ resource "github_repository" "devcontainers-features" {
 
 resource "github_repository" "pre-commit" {
   name        = "pre-commit"
-  description = "Git Commit Hooks"
+  description = "Git Hooks"
   visibility  = "public"
 
   allow_auto_merge       = true
